@@ -4,6 +4,7 @@ import shortuuid
 import qrcode
 from io import BytesIO
 import base64
+import os  # ✅ This should be at the top
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -32,8 +33,12 @@ def home():
         db.session.add(new_url)
         db.session.commit()
 
-        # Generate QR Code
-        qr = qrcode.make(f"http://127.0.0.1:5000/{short_url}")
+        # ✅ Get the Render URL (fallback to local if not available)
+        render_url = os.getenv("RENDER_EXTERNAL_URL", "https://flask-url-shortener-g0em.onrender.com")
+
+        # ✅ Generate the QR Code with the correct live link
+        qr = qrcode.make(f"{render_url}/{short_url}")
+
         img_io = BytesIO()
         qr.save(img_io, 'PNG')
         img_io.seek(0)
