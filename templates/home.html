@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Free URL Shortener & QR Code Generator | Shortify</title>
+    <meta name="description" content="Shorten URLs instantly and generate QR codes for free. Perfect for businesses, marketers, and personal use.">
+    <meta name="keywords" content="URL shortener, free QR code generator, link shortener, custom short links">
+    <meta name="author" content="Shortify">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fc;
+            text-align: center;
+            padding: 30px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .info-text {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+        img {
+            margin-top: 15px;
+            max-width: 100%;
+        }
+        .alert {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🔗 Shortify - Free URL Shortener & QR Code Generator</h1>
+        <p class="info-text">No sign-in required – Start shortening URLs instantly! 🚀</p>
+        <p class="info-text">100% Free & Unlimited!</p>
+        <p class="info-text">Generate QR codes in one click!</p>
+
+        <!-- 🔥 Ad #1 - Above the Shorten Button -->
+        <div class="mb-3">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6616423643278535"
+                crossorigin="anonymous"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-6616423643278535"
+                data-ad-slot="2667068508"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- URL Shortener Form -->
+        <form method="POST" class="mb-4">
+            <div class="mb-3">
+                <input type="text" name="url" class="form-control" placeholder="Enter long URL here..." required>
+            </div>
+            <button type="submit" class="btn btn-primary">Shorten URL</button>
+        </form>
+
+        <!-- Display Shortened URL & QR Code -->
+        {% if short_url %}
+            <div class="alert alert-success">
+                <p><strong>Shortened URL:</strong> <a href="{{ short_url }}" target="_blank">https://flask-url-shortener-g0em.onrender.com/{{ short_url }}</a></p>
+                
+                {% if clicks is defined %}
+                    <p>🔢 Clicks: <strong>{{ clicks }}</strong></p>
+                {% endif %}
+
+                <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+            </div>
+
+            <!-- 🔥 Ad #2 - Below Shortened URL -->
+            <div class="mb-3">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6616423643278535"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-6616423643278535"
+                    data-ad-slot="2667068508"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- 🔥 Ad #3 - Bottom of the Page -->
+    <div class="container mt-3">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6616423643278535"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6616423643278535"
+            data-ad-slot="2667068508"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
