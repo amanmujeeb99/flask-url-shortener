@@ -68,3 +68,24 @@ from flask import send_from_directory
 @app.route('/google33e5aa107a02cac2.html')
 def google_verification():
     return send_from_directory('static', 'google33e5aa107a02cac2.html')
+from flask import Response
+from datetime import datetime
+
+@app.route('/sitemap.xml')
+def sitemap():
+    urls = URL.query.all()  # Get all shortened URLs from the database
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url><loc>https://flask-url-shortener-g0em.onrender.com/</loc></url>
+    """
+    for url in urls:
+        xml += f"""
+        <url>
+            <loc>https://flask-url-shortener-g0em.onrender.com/{url.short_url}</loc>
+            <lastmod>{datetime.now().strftime('%Y-%m-%d')}</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.8</priority>
+        </url>
+        """
+    xml += "</urlset>"
+    return Response(xml, mimetype='application/xml')
