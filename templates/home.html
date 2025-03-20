@@ -9,7 +9,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6616423643278535"
         crossorigin="anonymous"></script>
 
-    <!-- Bootstrap CSS for Styling -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -38,13 +38,36 @@
             margin-top: 20px;
             max-width: 100%;
         }
+        .sticky-ad {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            padding: 10px 0;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
 
+    <!-- 🔥 1️⃣ Ad at the Top of the Page -->
+    <div class="container text-center mb-3">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6616423643278535"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6616423643278535"
+            data-ad-slot="2667068508"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <div class="container">
         <h1 class="mb-4">🔗 URL Shortener & QR Code Generator</h1>
-        
+
         <!-- URL Shortener Form -->
         <form method="POST" class="mb-4">
             <div class="mb-3">
@@ -63,7 +86,7 @@
                 <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
             </div>
 
-            <!-- Google AdSense Ad - QR Generator -->
+            <!-- 🔥 2️⃣ Ad Below QR Code -->
             <div class="container text-center mt-3">
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6616423643278535"
                     crossorigin="anonymous"></script>
@@ -80,7 +103,22 @@
         {% endif %}
     </div>
 
-    <!-- Bootstrap JS for Future Enhancements -->
+    <!-- 🔥 3️⃣ Sticky Bottom Ad -->
+    <div class="sticky-ad">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6616423643278535"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6616423643278535"
+            data-ad-slot="2667068508"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
