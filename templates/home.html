@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Free URL Shortener & QR Code Generator | Shortify</title>
-    <meta name="description" content="Shorten long URLs instantly and generate QR codes for free. Fast, simple, and reliable URL shortener.">
-    
+    <title>Free URL Shortener & QR Code Generator | Shortify</title>
+    <meta name="description" content="Shorten URLs instantly and generate QR codes for free. Perfect for businesses, marketers, and personal use.">
+    <meta name="keywords" content="URL shortener, free QR code generator, link shortener, custom short links">
+    <meta name="author" content="Shortify">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
@@ -43,7 +45,7 @@
 <body>
 
     <div class="container">
-        <h1 class="mb-4">🔗 URL Shortener & QR Code Generator</h1>
+        <h1 class="mb-4">🔗 Free URL Shortener & QR Code Generator</h1>
 
         <!-- URL Shortener Form -->
         <form method="POST" class="mb-4">
@@ -63,21 +65,6 @@
                 <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
             </div>
         {% endif %}
-    </div>
-
-    <!-- 🔥 Re-Adding Only One Ad (At the Bottom) -->
-    <div class="container text-center mt-3">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6616423643278535"
-            crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-6616423643278535"
-            data-ad-slot="2667068508"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
     </div>
 
     <!-- Bootstrap JS -->
