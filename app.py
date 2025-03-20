@@ -89,3 +89,24 @@ def sitemap():
         """
     xml += "</urlset>"
     return Response(xml, mimetype='application/xml')
+qr_pages = [
+    {"short_url": "google-qr", "original_url": "https://www.google.com"},
+    {"short_url": "facebook-qr", "original_url": "https://www.facebook.com"},
+    {"short_url": "instagram-qr", "original_url": "https://www.instagram.com"}
+]
+
+@app.route('/qr_sitemap.xml')
+def qr_sitemap():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    """
+    for page in qr_pages:
+        xml += f"""
+        <url>
+            <loc>https://flask-url-shortener-g0em.onrender.com/{page['short_url']}</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.6</priority>
+        </url>
+        """
+    xml += "</urlset>"
+    return Response(xml, mimetype='application/xml')
