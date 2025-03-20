@@ -63,3 +63,8 @@ if __name__ == '__main__':
     with app.app_context():  # Ensures database creation inside Flask context
         db.create_all()
     app.run(debug=True)  # Start Flask server
+from flask import send_from_directory
+
+@app.route('/google33e5aa107a02cac2.html')
+def google_verification():
+    return send_from_directory('static', 'google33e5aa107a02cac2.html')
